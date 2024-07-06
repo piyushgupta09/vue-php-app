@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Listings Management</title>
+    <link rel="stylesheet" href="assets/css/styles.css">
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+</head>
+<body>
+    <div id="app">
+        <h1>Listings</h1>
+        <add-listing-component></add-listing-component>
+        <listings-component :listings="listings" @edit-listing="editListing" @delete-listing="deleteListing"></listings-component>
+        <edit-listing-component :current-listing="currentListing" :editing="editing" @update-listing="updateListing" @cancel-edit="cancelEdit"></edit-listing-component>
+    </div>
+
+    <!-- Include Vue component scripts -->
+    <script src="assets/js/components/AddListingComponent.js"></script>
+    <script src="assets/js/components/ListingsComponent.js"></script>
+    <script src="assets/js/components/EditListingComponent.js"></script>
+    <script src="assets/js/app.js"></script>
+</body>
+</html>
