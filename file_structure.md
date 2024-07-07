@@ -23,4 +23,6 @@ ecom/
 │   ├── favicon.ico
 │   ├── index.html
 │   ├── logo.png
+│   ├── router.php
+├── file_structure.md
 ├── .gitignore

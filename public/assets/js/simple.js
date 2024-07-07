@@ -1,0 +1,1 @@
+console.log("simpleTest.js is loaded and executed!");

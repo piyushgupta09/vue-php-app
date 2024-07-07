@@ -1,18 +1,18 @@
 RewriteEngine On
 
-# Route API requests to the server directory
-RewriteRule ^api/?$ ../server/api.php [L]
-
-# Serve static files from the public directory
+# Route everything through router.php
 RewriteCond %{REQUEST_FILENAME} !-f
-RewriteRule ^(.*)$ $1 [L]
+RewriteRule ^ router.php [QSA,L]
 
-# Deny direct access to the config and database directories
-<Directory "../server/config">
-    Order allow,deny
-    Deny from all
-</Directory>
-<Directory "../server/database">
-    Order allow,deny
-    Deny from all
-</Directory>
+<!-- RewriteEngine On
+
+# Ensure the correct MIME type for JavaScript modules
+AddType application/javascript .js
+
+# Route API requests to router.php
+RewriteCond %{REQUEST_URI} ^/api [NC]
+RewriteRule ^ router.php [QSA,L]
+
+# Serve static files normally
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteRule ^ index.html [QSA,L] -->
